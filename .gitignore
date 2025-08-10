@@ -9,6 +9,9 @@ __pycache__/
 *.sublime-workspace
 *.sublime-project
 
+# Local skor tablosu
+data/scores.json
+
 # Ortam dosyaları
 .env
 .venv/

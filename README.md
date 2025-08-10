@@ -5,7 +5,7 @@ It offers a simple and user-friendly experience for learners who want to study a
 ## Table of Contents
 
 - [English Section](#english-turkish-word-quiz-game)
-- [Türkçe Bölüm](#ingilizce-türkçe-word-quiz-game-tr)
+- [Türkçe Bölüm](#english-turkish-word-quiz-game-tr)
 ---
 ## Contents
 
@@ -134,7 +134,7 @@ Feel free to contact me for any questions or suggestions regarding the project.
 
 ---
 
-# İngilizce-Türkçe Word Quiz Game [TR]
+# English-Turkish Word Quiz Game [TR]
 Python ve Tkinter kütüphanesi kullanılarak geliştirilmiş, İngilizce kelime öğrenmeye yönelik interaktif bir masaüstü uygulamasıdır. 
 Öğrenme ve tekrar yapmak isteyen kullanıcılar için sade ve kullanışlı bir deneyim sunar.
 

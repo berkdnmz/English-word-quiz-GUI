@@ -32,14 +32,14 @@ The project is currently under development and aims to offer richer content and 
 ## Features
 
 ### Current Features
-- User-friendly interface based on `Tkinter`
-- English → Turkish translation game mode
-- Random word selection for varied questions each game
-- Correct / incorrect answer tracking and score display
-- End-game screen with summary
+- **User-friendly interface** based on `Tkinter`
+- **English → Turkish** translation game mode
+- **Reading Word List from CSV File** (Creating your own word pool)
+- **Random word selection** for varied questions each game
+- **Correct / incorrect answer tracking** and score display
+- **End-game screen** with summary
 
 ### Planned Features
-- Support for reading word lists from CSV files (creating custom word pools)
 - Turkish → English translation mode
 - User account and score saving system
 - Different difficulty levels (easy, medium, hard)
@@ -67,7 +67,25 @@ pip install -r requirements.txt
 
 
 4. **Start the game**  
+```bash
 python main.py  
+```
+### Word List (CSV) Support  
+This project uses a CSV file to store English–Turkish word pairs.  
+
+**CSV Format**
+The CSV file must follow this format:
+```
+English,Turkish
+time,zaman
+person,kişi
+year,yıl
+```
+Each line should contain an English word and its corresponding Turkish translation, separated by a comma.  
+#### Using Your Own CSV File
+1. Prepare your CSV file in the format described above.
+2. Save the file with UTF-8 encoding (to ensure Turkish character support).
+3. Replace the existing `words.csv` file in the project folder or update the file path in the code.
 
 ---
 ## Usage
@@ -171,12 +189,12 @@ Proje şu anda geliştirme aşamasında olup, yeni sürümlerde daha zengin içe
 ### Mevcut Özellikler
 - `Tkinter` tabanlı **kullanıcı dostu arayüz**
 - **İngilizce → Türkçe** kelime çeviri modu
+- **CSV dosyasından kelime listesi okuma** (kendi kelime havuzunu oluşturma.)
 - **Rastgele kelime seçimi** ile her oyun için farklı sorular
 - **Doğru / yanlış cevap takibi** ve skor gösterimi
 - **Oyun bitiş ekranı** ile sonuç özeti
 
 ### Planlanan Özellikler
-- **CSV dosyasından kelime listesi okuma** desteği (kendi kelime havuzunu oluşturma)
 - **Türkçe → İngilizce** çeviri modu
 - **Kullanıcı hesabı ve skor kaydı** sistemi
 - **Farklı zorluk seviyeleri** (kolay, orta, zor)
@@ -205,7 +223,27 @@ pip install -r requirements.txt
 
 
 4. **Oyunu Başlatın**  
+```bash
 python main.py  
+```
+### Kelime Listesi (CSV) Desteği
+Bu proje İngilizce–Türkçe kelime çiftlerini saklamak için CSV dosyası kullanır.  
+
+**CSV Formatı**  
+CSV dosyası şu formatta olmalıdır:
+```
+English,Turkish
+time,zaman
+person,kişi
+year,yıl
+```
+Satırlada önce İngilizce kelime ve karşılığı Türkçe kelime, arada virgül olacak şekilde yazılmalıdır.
+
+#### Kendi CSV Dosyanızı Kullanma
+1. Yukarıda belirtilen formata uygun şekilde CSV dosyanızı hazırlayın.
+2. Dosyayı UTF-8 kodlamasıyla kaydedin (Türkçe karakter desteği için).
+3. Proje klasöründeki mevcut `words.csv` dosyasını değiştirin veya kod içinde dosya yolunu güncelleyin.
+
 
 ---
 ## Kullanım

@@ -122,7 +122,9 @@ English-word-quiz-GUI/
 ├── gui.py           # Interface design and event handling
 ├── word_manager.py  # Word data management
 ├── LICENSE          # License file
-└── README.md        # Project documentation
+├── README.md        # Project documentation
+└── data/
+    └── words.csv    # The file containing the words
 ```
 ---
 ## Note
@@ -284,7 +286,9 @@ English-word-quiz-GUI/
 ├── gui.py           # Arayüz tasarımı ve olay yönetimi
 ├── word_manager.py  # Kelime veri yönetimi
 ├── LICENSE          # Lisans dosyası
-└── README.md        # Proje dökümantasyonu
+├── README.md        # Proje dökümantasyonu
+└── data/ 
+    └──words.csv      # Kelimeleri içeren dosya
 ```
 ---
 ## Not

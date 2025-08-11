@@ -9,8 +9,9 @@ __pycache__/
 *.sublime-workspace
 *.sublime-project
 
-# Local skor tablosu
+# Local dosyalar
 data/scores.json
+extras/
 
 # Ortam dosyaları
 .env
@@ -37,4 +38,4 @@ Thumbs.db
 *.pyo
 *.~*
 
-
+ 

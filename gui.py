@@ -55,7 +55,7 @@ class MyGUI():
 
         # Button for start the game
         self.btn_start_game = Button(self.root, text="START", font=("Helvetica", 20, "italic bold"), padx=5, pady=0,
-                                     bg="#27A3F5", fg="white", command=self.game.game_start)
+                                     bg="#27A3F5", fg="white", command=self.game.game_start, activeforeground="#27A3F5")
         self.btn_start_game.place(relx=0.5, rely=0.5, anchor='center')
 
         # Feedback label
@@ -66,13 +66,18 @@ class MyGUI():
         # score label
         self.lbl_total_correct = Label(self.root, text="", font=("Helvetica", 15, "roman bold"), padx=15, pady=12,
                                        fg="white", bg="#84ED6B")
-        self.lbl_total_correct.grid(row=5, column=1, padx=10, pady=10, sticky="w")
+        self.lbl_total_correct.grid(row=4, column=1, padx=10, pady=10, sticky="w")
         self.lbl_total_correct.grid_remove()
 
         self.lbl_total_wrong = Label(self.root, text="", font=("Helvetica", 15, "roman bold"), padx=17, pady=10,
                                      bg="#F44336", fg="white")
-        self.lbl_total_wrong.grid(row=5, column=2, padx=10, pady=10, sticky="e")
+        self.lbl_total_wrong.grid(row=4, column=2, padx=10, pady=10, sticky="e")
         self.lbl_total_wrong.grid_remove()
+
+        # Button to replay
+        self.btn_replay = Button(self.root, text="PLAY AGAİN", font=("Helvetica", 18, "italic bold"), padx=10, pady=0,
+                                 bg="#27A3F5", fg="white", command=self.game.game_start, activeforeground="#27A3F5")
+        self.btn_replay.place_forget()
 
         # Creator label
         maker_label = Label(self.root, text="Created by Berk", bg="#F5F5DC", fg="#555555",
@@ -112,6 +117,11 @@ class MyGUI():
         self.game.ask_words()
 
     def game_area(self):
+        self.lbl_total_correct.grid_remove()
+        self.lbl_total_wrong.grid_remove()
+        self.btn_replay.place_forget()
+        self.game.total_wrong = 0
+        self.game.total_correct = 0
         self.lbl_english.grid()
         self.lbl_turkish.grid()
         self.lbl_english_word.grid()
@@ -125,6 +135,11 @@ class MyGUI():
         self.lbl_total_wrong.grid()
         self.lbl_total_correct.config(text=f"Total Correct : {self.game.total_correct}")
         self.lbl_total_wrong.config(text=f"Total Wrong : {self.game.total_wrong}")
+        self.btn_replay.place(relx=0.5, rely=0.55, anchor='center')
+        self.entry_turkish_word.config(state="normal", background="white")
+        self.entry_turkish_word.delete(0, END)
+        self.entry_turkish_word.focus()
+        self.lbl_english_word.config(bg="white", fg="black")
 
     def run_root(self):
         self.root.mainloop()

@@ -81,7 +81,6 @@ level,seviye
 office,ofis
 door,kapi
 health,sağlık
-person,kişi
 art,sanat
 war,savaş
 history,tarih
@@ -89,7 +88,7 @@ party,parti
 result,sonuç
 change,değişim
 morning,sabah
-reason,sebe
+reason,sebepler
 research,araştırma
 girl,kız
 guy,adam

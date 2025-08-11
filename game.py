@@ -10,6 +10,7 @@ class Game():
         self.total_correct = 0
         self.total_wrong = 0
         self.score = 0
+        self.round_count = 0
 
         if game_screen:
             game_screen.game = self
@@ -20,8 +21,8 @@ class Game():
             self.game_screen.show_word(word)
             self.correct_word = self.word_manager.words[word]
         else:
-            self.game_screen.lbl_feedback.config(text="GAMER OVER!", bg="#27A3F5", fg="white",
-                                             font=("Helvetica", 20, "italic roman bold"))
+            self.game_screen.lbl_feedback.config(text="GAME OVER!", bg="#27A3F5", fg="white",
+                                             font=("Helvetica", 30, "italic bold"), padx=20, pady=10)
             self.game_screen.entry_turkish_word.config(state="disabled")
             self.game_screen.entry_turkish_word.grid_remove()
             self.game_screen.lbl_turkish.grid_remove()
@@ -29,7 +30,8 @@ class Game():
             self.game_screen.lbl_english_word.grid_remove()
             self.current_index = 0
             self.game_screen.lbl_feedback.place(relx=0.5, rely=0.5, anchor="center")
-            self.game_screen.root.after(1000, self.game_screen.show_score_label)
+            self.game_screen.blink_label(self.game_screen.lbl_feedback)
+            self.game_screen.root.after(2000, self.game_screen.show_score_label)
 
     def check_answer(self, user_answer):
         if user_answer.strip().lower() == self.correct_word.lower():
@@ -39,7 +41,8 @@ class Game():
             self.total_wrong += 1
             return False
 
-    def game_start(self):
+    def game_start(self, round_count):
+        self.round_count = round_count
         self.game_screen.game_area()
-        self.selected_words = self.word_manager.select_word(10)
+        self.selected_words = self.word_manager.select_word(self.round_count)
         self.ask_words()

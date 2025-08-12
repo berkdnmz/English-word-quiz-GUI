@@ -11,6 +11,7 @@ __pycache__/
 
 # Local dosyalar
 data/scores.json
+data/my-words/
 extras/
 
 # Ortam dosyaları
